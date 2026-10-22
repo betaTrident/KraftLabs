@@ -7,6 +7,9 @@ describe("BrandMark", () => {
   it("exposes the written brand name to assistive technology", () => {
     render(<BrandMark compact />);
 
-    expect(screen.getByRole("img", { name: "Kr4ftLabs" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "Kr4ftLabs" })).toHaveAttribute(
+      "src",
+      "/brand/symbol-dark.webp",
+    );
   });
 });

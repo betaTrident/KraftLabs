@@ -11,6 +11,20 @@ test("landing page renders and interactions work", async ({ page }, testInfo) =>
   await expect(page.getByRole("heading", { name: /Useful software, made with intent/i })).toBeVisible();
   await expect(page.getByText("No placeholders dressed as products.")).toBeVisible();
 
+  for (const image of await page.locator(".brand-lockup img").all()) {
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() =>
+      image.evaluate((element) =>
+        element instanceof HTMLImageElement && element.complete && element.naturalWidth > 0,
+      ),
+    ).toBe(true);
+  }
+
+  const iconHrefs = await page.locator('link[rel~="icon"]').evaluateAll((links) =>
+    links.map((link) => (link as HTMLLinkElement).href),
+  );
+  expect(iconHrefs.some((href) => href.includes("/brand/app-icon-"))).toBe(true);
+
   const accessibility = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
     .analyze();

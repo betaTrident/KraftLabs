@@ -1,23 +1,25 @@
+import Image from "next/image";
+
 type BrandMarkProps = {
   compact?: boolean;
+  theme?: "dark" | "light";
 };
 
-export function BrandMark({ compact = false }: BrandMarkProps) {
+export function BrandMark({ compact = false, theme = "dark" }: BrandMarkProps) {
+  const imageKind = compact ? "symbol" : "wordmark";
+  const width = compact ? 512 : 720;
+  const height = compact ? 512 : theme === "dark" ? 132 : 133;
+
   return (
-    <span className="brand-lockup" role="img" aria-label="Kr4ftLabs">
-      <svg
-        className="brand-symbol"
-        viewBox="0 0 42 48"
-        aria-hidden="true"
-      >
-        <path d="M4 3h10v16L29 3h11L24 21l15 24H27L17 28l-3 3v14H4V3Z" />
-        <path className="brand-bolt" d="m24 10-9 18h8l-4 15 15-22h-9l7-11h-8Z" />
-      </svg>
-      {compact ? null : (
-        <span className="brand-wordmark" aria-hidden="true">
-          Kr<span className="wordmark-bolt">4</span>ftLabs
-        </span>
-      )}
+    <span className="brand-lockup">
+      <Image
+        className={compact ? "brand-symbol-image" : "brand-wordmark-image"}
+        src={`/brand/${imageKind}-${theme}.webp`}
+        width={width}
+        height={height}
+        alt="Kr4ftLabs"
+        unoptimized
+      />
     </span>
   );
 }

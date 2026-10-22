@@ -16,6 +16,21 @@ export const metadata: Metadata = {
   title: "Kr4ftLabs — Useful software, made with intent",
   description:
     "Kr4ftLabs is a personal platform for useful digital tools and applications built with clarity, purpose, and care.",
+  icons: {
+    icon: [
+      {
+        url: "/brand/app-icon-light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/brand/app-icon-dark.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: "/brand/app-icon-light.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
