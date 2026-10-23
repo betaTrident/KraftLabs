@@ -861,168 +861,13 @@ a:hover .arrow-icon-left {
   border-left: 0;
 }
 
-.preview-topline {
-  display: flex;
-  gap: 0.38rem;
-  padding: 1.25rem;
-  border-bottom: 1px solid var(--line-light);
+.landing-illustration {
+  object-fit: contain;
+  pointer-events: none;
 }
 
-.preview-topline span {
-  width: 0.4rem;
-  height: 0.4rem;
-  border: 1px solid rgba(242, 238, 228, 0.5);
-  border-radius: 50%;
-}
-
-.utility-preview {
-  display: flex;
-  flex-direction: column;
-}
-
-.utility-readout {
-  margin: auto 8% 1.6rem;
-  color: var(--orange);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(5rem, 9vw, 10rem);
-  font-weight: 300;
-  letter-spacing: -0.1em;
-  line-height: 0.82;
-}
-
-.utility-track {
-  height: 0.65rem;
-  margin: 0 8%;
-  background: rgba(242, 238, 228, 0.15);
-}
-
-.utility-track span {
-  display: block;
-  width: 67%;
-  height: 100%;
-  background: var(--orange);
-}
-
-.utility-actions {
-  display: flex;
-  gap: 0.7rem;
-  margin: 2rem 8% 8%;
-}
-
-.utility-actions i {
-  width: 4.5rem;
-  height: 4.5rem;
-  border: 1px solid rgba(242, 238, 228, 0.25);
-}
-
-.utility-actions i:first-child {
-  background: var(--paper);
-}
-
-.organize-preview {
-  display: grid;
-  grid-template-columns: 5rem 1fr;
-  grid-template-rows: auto 1fr;
-}
-
-.organize-preview .preview-topline {
-  grid-column: 1 / -1;
-}
-
-.organize-rail {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1.5rem;
-  border-right: 1px solid rgba(242, 238, 228, 0.12);
-}
-
-.organize-rail i {
-  width: 1.6rem;
-  height: 1.6rem;
-  border: 1px solid rgba(242, 238, 228, 0.25);
-  border-radius: 50%;
-}
-
-.organize-rail i:first-child {
-  border-color: var(--orange);
-  background: var(--orange);
-}
-
-.organize-grid {
-  display: grid;
-  grid-auto-flow: dense;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1px;
-  margin: 8%;
-  background: rgba(242, 238, 228, 0.15);
-}
-
-.organize-grid span {
-  background: rgba(242, 238, 228, 0.06);
-}
-
-.organize-grid .wide {
-  grid-column: span 2;
-}
-
-.organize-grid .accent {
-  background: var(--orange);
-}
-
-.create-preview {
-  display: flex;
-  flex-direction: column;
-}
-
-.create-stage {
-  position: relative;
-  flex: 1;
-  margin: 7%;
-  overflow: hidden;
-  border: 1px solid rgba(242, 238, 228, 0.18);
-  background: var(--paper);
-}
-
-.create-stage span {
-  position: absolute;
-  display: block;
-}
-
-.shape-one {
-  top: 16%;
-  left: 13%;
-  width: 54%;
-  height: 62%;
-  background: var(--ink);
-  transform: rotate(-7deg);
-}
-
-.shape-two {
-  right: 8%;
-  bottom: 10%;
-  width: 39%;
-  height: 47%;
-  border: 0.8rem solid var(--orange);
-  transform: rotate(14deg);
-}
-
-.create-timeline {
-  display: grid;
-  height: 3.8rem;
-  grid-template-columns: 2fr 1fr 3fr 1.4fr;
-  gap: 1px;
-  margin: 0 7% 7%;
-  background: rgba(242, 238, 228, 0.14);
-}
-
-.create-timeline i {
-  background: rgba(242, 238, 228, 0.06);
-}
-
-.create-timeline i:nth-child(3) {
-  background: var(--orange);
+.maker-illustration {
+  z-index: 0;
 }
 
 .principles-section {
@@ -1139,15 +984,6 @@ a:hover .arrow-icon-left {
   background: var(--orange);
 }
 
-.maker-visual::before {
-  position: absolute;
-  width: 26rem;
-  height: 26rem;
-  border: 1px solid rgba(23, 23, 20, 0.4);
-  border-radius: 50%;
-  content: "";
-}
-
 .maker-k {
   position: relative;
   z-index: 2;
@@ -1169,34 +1005,6 @@ a:hover .arrow-icon-left {
 
 .maker-k .brand-symbol-image {
   width: 8rem;
-}
-
-.maker-line {
-  position: absolute;
-  height: 1px;
-  background: rgba(23, 23, 20, 0.45);
-  transform-origin: left;
-}
-
-.line-a {
-  top: 19%;
-  left: 0;
-  width: 43%;
-  transform: rotate(18deg);
-}
-
-.line-b {
-  right: 0;
-  bottom: 25%;
-  width: 46%;
-  transform: rotate(-28deg);
-}
-
-.line-c {
-  bottom: 8%;
-  left: 12%;
-  width: 64%;
-  transform: rotate(58deg);
 }
 
 .maker-notes {
@@ -1567,10 +1375,6 @@ a:hover .arrow-icon-left {
     min-height: 25rem;
   }
 
-  .organize-preview {
-    grid-template-columns: 4rem 1fr;
-  }
-
   .principle-accordion {
     min-height: auto;
     flex-direction: column;
@@ -1602,11 +1406,6 @@ a:hover .arrow-icon-left {
 
   .maker-visual {
     min-height: 29rem;
-  }
-
-  .maker-visual::before {
-    width: 19rem;
-    height: 19rem;
   }
 
   .maker-k {

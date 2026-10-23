@@ -32,6 +32,10 @@ There is no Git history yet. Use concise, imperative subjects, preferably Conven
 
 Never commit secrets; document required variables in `.env.example`. Do not invent products, availability, metrics, testimonials, or performance claims. Keep this repository scoped to the landing page unless the scope is explicitly expanded.
 
+## Brand & Illustration Assets
+
+Use [src/assets/](src/assets/) for authoritative supplied logos and illustration originals. Consult the [asset guide](src/assets/README.md) for image placements, prompts, dimensions, accessibility descriptions, and web exports. Supplied brand artwork must not be regenerated. Illustrations follow [DESIGN.md](DESIGN.md) and must not imply unconfirmed products. Keep originals in `src/assets/illustrations/` and optimized derivatives in `public/illustrations/`; preserve the hero and existing layout and motion when updating artwork.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -84,36 +85,22 @@ function SparkGlyph() {
 }
 
 function WorkspacePreview({ variant }: { variant: "utility" | "organize" | "create" }) {
-  if (variant === "utility") {
-    return (
-      <div className="preview-canvas utility-preview" aria-hidden="true">
-        <div className="preview-topline"><span /><span /><span /></div>
-        <div className="utility-readout">24:00</div>
-        <div className="utility-track"><span /></div>
-        <div className="utility-actions"><i /><i /><i /></div>
-        <span className="scene-shade" />
-      </div>
-    );
-  }
-
-  if (variant === "organize") {
-    return (
-      <div className="preview-canvas organize-preview" aria-hidden="true">
-        <div className="preview-topline"><span /><span /><span /></div>
-        <div className="organize-rail"><i /><i /><i /></div>
-        <div className="organize-grid">
-          <span className="wide" /><span /><span /><span className="accent" />
-        </div>
-        <span className="scene-shade" />
-      </div>
-    );
-  }
+  const artwork = {
+    utility: "everyday-utilities",
+    organize: "productivity-organization",
+    create: "creative-work",
+  }[variant];
 
   return (
-    <div className="preview-canvas create-preview" aria-hidden="true">
-      <div className="preview-topline"><span /><span /><span /></div>
-      <div className="create-stage"><span className="shape-one" /><span className="shape-two" /></div>
-      <div className="create-timeline"><i /><i /><i /><i /></div>
+    <div className={`preview-canvas ${variant}-preview`} aria-hidden="true">
+      <Image
+        className="landing-illustration"
+        src={`/illustrations/${artwork}.webp`}
+        alt=""
+        fill
+        sizes="(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1000px) 92vw, 60vw"
+        loading="lazy"
+      />
       <span className="scene-shade" />
     </div>
   );
@@ -370,10 +357,15 @@ export function LandingPage() {
 
       <section className="maker-section section-space" aria-labelledby="maker-title">
         <div className="maker-visual" aria-hidden="true">
+          <Image
+            className="landing-illustration maker-illustration"
+            src="/illustrations/open-workshop.webp"
+            alt=""
+            fill
+            sizes="(max-width: 700px) calc(100vw - 2.5rem), (max-width: 1000px) 92vw, 48vw"
+            loading="lazy"
+          />
           <div className="maker-k"><BrandMark compact /></div>
-          <span className="maker-line line-a" />
-          <span className="maker-line line-b" />
-          <span className="maker-line line-c" />
         </div>
         <div className="maker-notes">
           <p className="card-overline">A note from the maker</p>
