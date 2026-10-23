@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T00:01:31.3589960Z",
+  "title": "Design System: Kr4ftLabs",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "#ff5a1f",
+        "tonalRamp": ["#461103", "#721d07", "#9d2b0b", "#c93b10", "#ff5a1f", "#ff8154", "#ffad8d", "#ffe0d3"]
+      },
+      "workshop-ink": {
+        "role": "neutral",
+        "displayName": "Workshop Ink",
+        "canonical": "#171714",
+        "tonalRamp": ["#0b0b09", "#171714", "#2b2a26", "#47453f", "#6d6961", "#99948a", "#c8c2b7", "#f2eee4"]
+      },
+      "workshop-ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Workshop Ink",
+        "canonical": "#24231f",
+        "tonalRamp": ["#0c0c0a", "#181714", "#24231f", "#3e3c36", "#625f57", "#8f8a81", "#c0baaf", "#efeadf"]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f2eee4",
+        "tonalRamp": ["#26241f", "#454139", "#686259", "#8e877c", "#b4ada1", "#d1cbc0", "#e7e1d6", "#f2eee4"]
+      },
+      "warm-paper-bright": {
+        "role": "neutral",
+        "displayName": "Bright Warm Paper",
+        "canonical": "#fffaf0",
+        "tonalRamp": ["#29261f", "#4a453b", "#6f685c", "#978f82", "#beb6a9", "#ddd6ca", "#f1eadf", "#fffaf0"]
+      },
+      "muted-graphite": {
+        "role": "neutral",
+        "displayName": "Muted Graphite",
+        "canonical": "#575650",
+        "tonalRamp": ["#171613", "#2b2a26", "#41403b", "#575650", "#77756e", "#9e9b93", "#c9c5bc", "#f0ece3"]
+      },
+      "beta-rust": {
+        "role": "primary",
+        "displayName": "Beta Rust",
+        "canonical": "#c93208",
+        "tonalRamp": ["#3c0901", "#621103", "#8a1c04", "#ad2706", "#c93208", "#e36742", "#efa58b", "#fae0d5"]
+      },
+      "line-on-light": {
+        "role": "neutral",
+        "displayName": "Line on Light",
+        "canonical": "rgba(23, 23, 20, 0.2)",
+        "tonalRamp": ["rgba(23, 23, 20, 0.08)", "rgba(23, 23, 20, 0.12)", "rgba(23, 23, 20, 0.16)", "rgba(23, 23, 20, 0.2)", "rgba(23, 23, 20, 0.28)", "rgba(23, 23, 20, 0.38)", "rgba(23, 23, 20, 0.52)", "rgba(23, 23, 20, 0.68)"]
+      },
+      "line-on-dark": {
+        "role": "neutral",
+        "displayName": "Line on Dark",
+        "canonical": "rgba(242, 238, 228, 0.22)",
+        "tonalRamp": ["rgba(242, 238, 228, 0.08)", "rgba(242, 238, 228, 0.12)", "rgba(242, 238, 228, 0.16)", "rgba(242, 238, 228, 0.22)", "rgba(242, 238, 228, 0.3)", "rgba(242, 238, 228, 0.42)", "rgba(242, 238, 228, 0.58)", "rgba(242, 238, 228, 0.74)"]
+      }
+    },
+    "typographyMeta": {
+      "display-xl": { "displayName": "Display XL", "purpose": "Hero headline only; capped and responsive." },
+      "display-lg": { "displayName": "Display LG", "purpose": "Major section statements and closing calls." },
+      "headline-lg": { "displayName": "Headline LG", "purpose": "Narrative statements and expanded panel titles." },
+      "title-lg": { "displayName": "Title LG", "purpose": "Card and feature headings." },
+      "body-lg": { "displayName": "Body LG", "purpose": "Hero summary and high-priority explanation." },
+      "body-md": { "displayName": "Body MD", "purpose": "General explanation and maker notes." },
+      "action": { "displayName": "Action", "purpose": "Buttons and navigation actions." },
+      "label-md": { "displayName": "Label MD", "purpose": "Overlines, counters, and system telemetry." },
+      "label-sm": { "displayName": "Label SM", "purpose": "Compact status and module labels." }
+    },
+    "shadows": [
+      { "name": "signal-offset", "value": "1.2rem 1.2rem 0 #ff5a1f", "purpose": "Hard printed offset for the hero workshop signal." },
+      { "name": "paper-offset", "value": "1.3rem 1.3rem 0 #f2eee4", "purpose": "Hard physical layer behind the maker brand object." }
+    ],
+    "motion": [
+      { "name": "feedback-fast", "value": "220ms ease", "purpose": "Hover, focus, underline, and arrow feedback." },
+      { "name": "structure-expressive", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Accordion, focal-panel, and large geometry transitions." },
+      { "name": "opening-reveal", "value": "700-1000ms power3.out", "purpose": "Staged first-viewport entrance." },
+      { "name": "signal-pulse", "value": "1800ms ease-in-out infinite", "purpose": "Low-amplitude live-status pulse only." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "1000px" },
+      { "name": "mobile", "value": "700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single high-confidence action on a dark surface.",
+      "html": "<button class=\"ds-button-primary\">See the collection <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-button-primary { display:inline-flex; min-height:3.55rem; align-items:center; justify-content:center; gap:1rem; padding:.95rem 1.35rem; border:1px solid transparent; border-radius:0; background:var(--orange, #ff5a1f); color:var(--ink, #171714); font:700 .86rem Geist, sans-serif; transition:background 220ms ease, transform 220ms ease; } .ds-button-primary svg { width:1.05rem; fill:none; stroke:currentColor; stroke-width:1.6; } .ds-button-primary:hover { background:var(--paper-bright, #fffaf0); transform:translateY(-.18rem); } .ds-button-primary:focus-visible { outline:2px solid var(--orange, #ff5a1f); outline-offset:4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A restrained companion action for dark surfaces.",
+      "html": "<button class=\"ds-button-secondary\">Why Kr4ftLabs</button>",
+      "css": ".ds-button-secondary { min-height:3.55rem; padding:.95rem 1.35rem; border:1px solid rgba(242,238,228,.55); border-radius:0; background:transparent; color:var(--paper, #f2eee4); font:700 .86rem Geist, sans-serif; transition:background 220ms ease, color 220ms ease, border-color 220ms ease, transform 220ms ease; } .ds-button-secondary:hover { border-color:var(--paper, #f2eee4); background:var(--paper, #f2eee4); color:var(--ink, #171714); transform:translateY(-.18rem); } .ds-button-secondary:focus-visible { outline:2px solid var(--orange, #ff5a1f); outline-offset:4px; }"
+    },
+    {
+      "name": "Available Status",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "Text-first release telemetry with a semantic signal dot.",
+      "html": "<span class=\"ds-status\"><i aria-hidden=\"true\"></i>Available</span>",
+      "css": ".ds-status { display:inline-flex; align-items:center; gap:.5rem; color:var(--ink, #171714); font:700 .67rem 'Geist Mono', monospace; letter-spacing:.06em; text-transform:uppercase; } .ds-status i { width:.52rem; height:.52rem; border:1px solid currentColor; border-radius:50%; background:currentColor; }"
+    },
+    {
+      "name": "Light Bento Card",
+      "kind": "card",
+      "refersTo": "card-light",
+      "description": "A square light surface that belongs to a one-pixel compound grid.",
+      "html": "<article class=\"ds-card-light\"><span>Release language</span><h3>Know what is ready before you open it.</h3></article>",
+      "css": ".ds-card-light { min-height:16rem; padding:2rem; border:0; border-radius:0; background:var(--paper-bright, #fffaf0); color:var(--ink, #171714); } .ds-card-light span { font:650 .68rem 'Geist Mono', monospace; letter-spacing:.12em; text-transform:uppercase; } .ds-card-light h3 { max-width:20rem; margin:2rem 0 0; font:730 2.5rem/.98 Geist, sans-serif; letter-spacing:-.055em; }"
+    },
+    {
+      "name": "Dark Workshop Card",
+      "kind": "card",
+      "refersTo": "card-dark",
+      "description": "A square charcoal module for brand and system-level content.",
+      "html": "<article class=\"ds-card-dark\"><div aria-hidden=\"true\"><svg viewBox=\"0 0 36 36\"><path d=\"M21 2 8 20h9l-3 14 14-20h-9l2-12Z\"/></svg></div><p>One system</p><span>Distinct jobs</span></article>",
+      "css": ".ds-card-dark { display:flex; min-height:16rem; flex-direction:column; padding:2rem; border-radius:0; background:var(--ink-soft, #24231f); color:var(--paper, #f2eee4); } .ds-card-dark div { display:grid; width:5.2rem; height:5.2rem; margin:0 0 auto auto; place-items:center; border:1px solid var(--orange, #ff5a1f); border-radius:50%; color:var(--orange, #ff5a1f); transition:border-radius 500ms ease, transform 500ms ease; } .ds-card-dark svg { width:2.2rem; fill:currentColor; } .ds-card-dark:hover div { border-radius:0; transform:rotate(8deg); } .ds-card-dark p { margin:0; font:750 1.6rem Geist, sans-serif; letter-spacing:-.04em; } .ds-card-dark span { margin-top:.25rem; color:var(--orange, #ff5a1f); font:600 .66rem 'Geist Mono', monospace; text-transform:uppercase; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "description": "Quiet compact navigation with a directional signal underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#collection\">Collection</a>",
+      "css": ".ds-nav-link { position:relative; color:var(--paper, #f2eee4); font:590 .78rem Geist, sans-serif; letter-spacing:.05em; text-decoration:none; } .ds-nav-link::after { position:absolute; right:0; bottom:-.45rem; left:0; height:1px; background:var(--orange, #ff5a1f); content:''; transform:scaleX(0); transform-origin:right; transition:transform 240ms ease; } .ds-nav-link:hover::after, .ds-nav-link:focus-visible::after { transform:scaleX(1); transform-origin:left; } .ds-nav-link:focus-visible { outline:2px solid var(--orange, #ff5a1f); outline-offset:4px; }"
+    },
+    {
+      "name": "Circular Arrow Control",
+      "kind": "button",
+      "description": "A compact previous/next control; circles are reserved for directional jobs.",
+      "html": "<button class=\"ds-arrow-control\" aria-label=\"Next item\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-arrow-control { display:grid; width:3rem; height:3rem; place-items:center; border:1px solid var(--ink, #171714); border-radius:50%; background:transparent; color:var(--ink, #171714); transition:background 200ms ease, color 200ms ease; } .ds-arrow-control svg { width:1.05rem; fill:none; stroke:currentColor; stroke-width:1.6; } .ds-arrow-control:hover { background:var(--ink, #171714); color:var(--paper, #f2eee4); } .ds-arrow-control:focus-visible { outline:2px solid var(--orange, #ff5a1f); outline-offset:4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Workshop",
+    "overview": "Kr4ftLabs should feel like an independent maker's workshop with its doors open: purposeful, exact, and visibly alive. The interface combines editorial-scale typography with the structural honesty of a technical catalogue. Warm paper keeps the system approachable; charcoal gives it authority; vivid orange behaves like a live electrical signal. This is a product ecosystem, not a startup template. Every section should clarify what is being built, what state it is in, or what the maker values. The lightning mark supplies energy through angular cuts, offsets, line work, and tightly controlled motion—not through glows, gradients, or ornamental effects.",
+    "keyCharacteristics": [
+      "Monumental, tightly tracked typography with compact supporting copy.",
+      "Alternating charcoal, warm-paper, and signal-orange chapter surfaces.",
+      "Sharp containers, one-pixel rules, hard offsets, circles, and angular brand geometry.",
+      "Honest product states and task-focused previews instead of invented proof.",
+      "Purposeful motion that reveals structure and always respects reduced-motion preferences."
+    ],
+    "rules": [
+      { "name": "The Live Wire Rule", "body": "Orange must carry meaning. It may own a deliberate chapter band, but inside mixed layouts it marks action, status, progress, or the brand's lightning energy.", "section": "colors" },
+      { "name": "The Warm Neutral Rule", "body": "Do not replace the paper tones with pure white or the charcoal with generic blue-black. Their warmth is what keeps the technical language human.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Geist speaks for ideas and actions; Geist Mono speaks for state, metadata, and system signals. Do not introduce a third type family without a brand-level decision.", "section": "typography" },
+      { "name": "The Tight-When-Loud Rule", "body": "The larger the headline, the tighter its tracking and leading. Body copy never inherits the compressed display treatment.", "section": "typography" },
+      { "name": "The Chapter Rhythm Rule", "body": "Each major section must change scale, surface, or composition enough to feel like a new chapter while retaining the same tokens and geometry.", "section": "layout" },
+      { "name": "The One-Pixel Grid Rule", "body": "Dense catalogues and repeated panels are separated by a one-pixel ink gap or rule—not by floating-card spacing and shadows.", "section": "layout" },
+      { "name": "The Hard Shadow Rule", "body": "A shadow must read as a printed offset or physical layer. If it looks atmospheric, soft, or glowing, remove it.", "section": "elevation" },
+      { "name": "The Flat-at-Rest Rule", "body": "Ordinary cards, navigation, and controls use no shadow. State changes rely on color, rule weight, translation, or geometry.", "section": "elevation" },
+      { "name": "The Edge Discipline Rule", "body": "Keep primary containers and controls square. Do not soften the product into rounded SaaS chrome.", "section": "shapes" },
+      { "name": "The Circle Has a Job Rule", "body": "Every circle should indicate status, orbit, navigation, or focus. Circles are not filler decoration.", "section": "shapes" },
+      { "name": "The Motion Proves Structure Rule", "body": "Movement should show hierarchy, progress, or spatial relation. Do not add idle spectacle that competes with product meaning.", "section": "components" }
+    ],
+    "dos": [
+      "Do use the supplied Kr4ftLabs wordmark, symbol, and adaptive app icons; keep the written brand name exactly “Kr4ftLabs.”",
+      "Do make the first viewport immediately state that this is a maker-led home for useful digital products.",
+      "Do alternate bold chapter surfaces while keeping tokens, line work, and typography consistent.",
+      "Do show what a tool helps someone accomplish, and pair every real product with an honest availability state.",
+      "Do use angular geometry, hard offsets, and directional motion to echo the lightning mark.",
+      "Do verify every composition at 1440px and 375px, with keyboard focus and reduced motion included."
+    ],
+    "donts": [
+      "Don't invent product names, destinations, metrics, testimonials, user counts, or performance claims.",
+      "Don't use decorative gradients, glassmorphism, bloom, excessive glow, or soft floating shadows.",
+      "Don't default to repetitive rounded feature cards, pill-heavy controls, or a generic startup hero.",
+      "Don't flood mixed layouts with orange; reserve it for meaningful signals or a deliberately committed chapter surface.",
+      "Don't treat the logo as a watermark or repeat lightning motifs until they overpower content.",
+      "Don't add a third font, stock illustration style, or unrelated icon family without a deliberate extension of the system."
+    ]
+  }
+}
